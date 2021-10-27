@@ -9,19 +9,25 @@ import javax.persistence.*;
 @Table(schema = "security", name = "user")
 public class UserModel {
     @Id
-    @GeneratedValue
-    @Column(name = "email", length = 128)
-    private String email;
-
-    @Column(name = "username", nullable = false, length = 128)
+    @Column(name = "username", length = 128)
     private String username;
 
-    @Column(name = "mobile", nullable = false, length = 10)
+    @Column(name = "mobile", length = 10)
     private String mobile;
 
-    @Column(name = "password", nullable = false, length = 256)
+    @Column(name = "password", length = 256)
     private String password;
 
-    @Column(name = "enabled", nullable = false)
+    @Column(name = "enabled")
     private boolean isEnabled;
+
+    public UserModel(String username, String mobile, String password, boolean isEnabled) {
+        this.username = username;
+        this.mobile = mobile;
+        this.password = password;
+        this.isEnabled = isEnabled;
+    }
+
+    public UserModel() {
+    }
 }

@@ -10,9 +10,8 @@ import javax.persistence.*;
 public class OtpModel {
 
     @Id
-    @GeneratedValue
-    @Column(name = "email", length = 128)
-    private String email;
+    @Column(name = "username", length = 128)
+    private String username;
 
     @Column(name = "mobile")
     private String mobile;
